@@ -1,0 +1,17 @@
+{
+  "name": "wechat-ar-3d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ZhangZhiYu--790002517@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "@tweenjs/tween.js": "^18.6.4",
+    "@vant/weapp": "^1.10.14",
+    "mp-html": "^2.4.1",
+    "threejs-miniprogram": "^0.0.2"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "3D 视图",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "mp-html": "mp-html"
+  },
+  "disableScroll": true
+}

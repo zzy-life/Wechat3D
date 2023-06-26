@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-button": "@vant/weapp/button/index",
+    "cardSwiper":"../../components/cardSwiper/index",
+    "animalCrd":"../../components/animalCrd/index"
+  }
+  ,      "disableScroll":true,
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black"
+}

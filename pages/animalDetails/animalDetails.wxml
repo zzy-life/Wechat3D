@@ -1,0 +1,43 @@
+<scroll-view scroll-y="{{true}}" style="height:100vh" data-status-bar-height="44" scroll-with-animation id="headers" throttle="{{false}}" >
+    <view class="animalDetails" >
+        <headerNavbar ></headerNavbar>
+        <view class="headerImage">
+            <image class="background_box" src="{{animalData.animalImage}}"></image>
+        </view>
+        <view class="body">
+            <view class="introductionAndAr">
+                <view class="animalName">{{animalData.animalName}}</view>
+                <van-divider />
+                <view class="belongsTo" wx:for="{{Ary}}" wx:key="key">
+                    <text class="text1">{{item.key}}:</text>
+                    <text class="text2">{{item.value}}</text>
+                </view>
+                <view class="ClrCndNew">
+                    <view class="text">
+                        <view class="info">近距离见识真实大小的{{animalData.animalName}}</view>
+                        <view class="ClrCnd" bindtap="gotoURL" data-path="/package_3d_viewer/pages/camera/camera" data-modelsize="{{animalData.sysModel.modelSize}}" data-modelurl="{{animalData.sysModel.modelUrl}}" data-soundurl="{{animalData.sysModel.soundUrl}}">
+                            <view class="xgeiGb">
+                                <g-raised-button class="Gfzyee">
+                                    <view class="fSXkBc">
+                                        <view class="rKFBIe">
+                                            <view class="wPZGOb">
+                                                <image src="../../staic/svg/hero_3_icon.svg"></image>
+                                            </view>
+                                            合影(实验)
+                                        </view>
+                                    </view>
+                                </g-raised-button>
+                            </view>
+                        </view>
+                    </view>
+                    <image wx:if="{{!imageiserror}}" class="image" binderror="imagebinderror" src="{{animalData.sysModel.modelImage}}" />
+                    <video wx:if="{{imageiserror}}" class="image" show-center-play-btn="{{false}}" enable-progress-gesture="{{false}}" controls="{{false}}" autoplay="{{true}}" loop="{{true}}" src="{{animalData.sysModel.modelImage}}"></video>
+                </view>
+            </view>
+            <mp-html class="info_text" container-style=" margin: 0px 16px" content="{{animalData.animalDetailed}}" />
+            <view class="bottom">
+                <van-rate icon="like" class="rate" void-icon="like-o" />
+            </view>
+        </view>
+    </view>
+</scroll-view>

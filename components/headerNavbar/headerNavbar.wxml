@@ -1,0 +1,6 @@
+    <view class='header' style='height:{{navbarBtn.height}}px;'>
+        <view class="navbar-icon" style="padding-top:{{navbarBtn.top }}px;" wx:if='{{navbarData.showCapsule ? navbarData.showCapsule : true}}'>
+            <van-icon  wx:if='{{haveBack}}' bindtap="goBack" name="arrow-left" class="floatL" size="24px" />
+            <van-icon  wx:if='{{!haveBack}}' bindtap="goHome" name="arrow-left" class="floatL" size="24px" />
+        </view>
+    </view>

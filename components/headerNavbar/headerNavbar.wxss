@@ -1,0 +1,14 @@
+/* components/Goindex/Goindex.wxss */
+ .header{
+    display:flex;
+    align-items: center;
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+}
+

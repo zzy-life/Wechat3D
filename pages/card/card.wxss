@@ -1,0 +1,73 @@
+.container {
+    overflow: hidden;
+    width: 750rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+}
+
+.des_text_panel {
+    margin-top: 28rpx;
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.my_cardSwiper_panel {
+    width: 600rpx;
+    /* height: 1006rpx; */
+    height: 1200rpx;
+    margin-left: 75rpx;
+    margin-top: 76rpx;
+}
+
+.ShowToast {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, .5) !important;
+    filter: drop-shadow(1px 1px 55px rgba(0, 0, 0, .25));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px groove #EFEFEF;
+    flex-flow: column;
+    align-items: center;
+}
+
+.ShowToast .modelview {
+
+    font-size: 14px;
+    color: #000000;
+    line-height: 2;
+    text-align: justify;
+    text-align-last: center;
+    word-break: break-all;
+    text-align: center;
+}
+
+.ShowToast .modelview .text {
+    height: 75%;
+}
+
+.ShowToast .modelview b {
+    color: #FFFC00;
+    text-shadow: 0px 1px 1px rgb(0 0 0 / 25%);
+    font-weight: normal;
+}
+
+.ShowToast button {
+    height: 36px;
+    width: 94px;
+    background: #FFFC00;
+    border-radius: 36px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+
+}
+
+/* .ShowToast button .van-button__text{
+    display: flex;
+    justify-content: center;
+} */

@@ -1,0 +1,196 @@
+var instance = {}; //卡片实例
+var lock = false; //是否处于移动中
+var startX = 0 // 手指刚接触时屏幕X轴位置
+var moveX = 0 // 移动距离
+var cardIndex = 0 // 最上面卡片的数据索引
+var cardListIndex = 0;//滑动卡片的数据索引
+var cardZindex = 0 // 滑动卡片的页面层级
+var SLIDE_THRESHOLD = 0 // 松手后滑出界面阈值
+var ROTATE_DEG = 0 // 移出屏幕过程旋转角度
+var SLIDE_DURATION = 0 //手指离开屏幕后滑出界面时长，单位(ms)毫秒
+var CONTEXT_WIDTH = 0 // 组件展示范围宽度
+var last_instance = null;
+var last_cardIndex = null;
+var cardsLength = 0; //当前渲染卡片列表的长度
+/*s
+卡片当前处于的transition状态 
+  0 transition静止状态或结束状态
+  1 transition进行时
+*/
+var TRANSITION_STATUS = 0; 
+/*
+由外部事件触发的切换card 生命周期状态
+0 未触发
+1 触发前
+2 触发中
+3 触发结束
+*/ 
+var OUT_NEXT_STATUS = 0; 
+
+
+// 判断当前card是否渲染
+function isRender(index,nowIndex,showNum,isCycle,dataLength){
+  if(isCycle){
+    var position = dataLength  - nowIndex; //确定当前显示的卡片所处位置
+    if(position < showNum){
+      if(showNum - position > index) return true;
+    }
+  }
+  return !(index < nowIndex || nowIndex+showNum -1 < index);
+}
+
+
+function cardStyleTop(offsetY,index,nowIndex,showNum,isCycle,dataLength){
+  if(isCycle){
+    var position = dataLength  - nowIndex; //确定当前显示的卡片所处位置
+    if(position < showNum){
+      if(showNum - position > index) {
+        return offsetY*(position+index)
+      };
+    }
+  }
+  return offsetY*(index - nowIndex);
+}
+function cardStyleTranslate(showNum,index,nowIndex,showNum,isCycle,dataLength){
+  if(isCycle){
+    var position = dataLength  - nowIndex; //确定当前显示的卡片所处位置
+    if(position < showNum){
+      if(showNum - position > index) {
+        return showNum-(position+index)
+      };
+    }
+  }
+  return showNum-(index - nowIndex);
+}
+function cardStyleScale(scale,index,nowIndex,showNum,isCycle,dataLength){
+  if(isCycle){
+    var position = dataLength  - nowIndex; //确定当前显示的卡片所处位置
+    if(position < showNum){
+      if(showNum - position > index) {
+        return 1-scale*(position+index)
+      };
+    }
+  }
+  return 1-scale*(index - nowIndex);
+}
+function cardStyleOpacity(index,nowIndex,showNum,isCycle,dataLength){
+  if(isCycle){
+    var position = dataLength  - nowIndex; //确定当前显示的卡片所处位置
+    if(position < showNum){
+      if(showNum - position > index) {
+        return 0.6 
+      };
+    }
+  }
+  return index == nowIndex?1:0.6 ;
+}
+
+//开始移动
+function touchstart(e,ownerInstance){
+  instance = e.instance;
+  var dataset = instance.getDataset() //页面传值
+  cardListIndex = dataset.cardListIndex;
+  cardIndex = dataset.cardIndex
+  if (cardIndex !== cardListIndex) {
+      instance = {}
+      return
+  }
+  if(lock) return;
+  lock = true;
+
+
+  startX = e.touches[0].clientX
+  cardZindex = dataset.cardZindex
+  ROTATE_DEG = dataset.rotateDeg
+  SLIDE_DURATION = dataset.slideDuration
+  CONTEXT_WIDTH = dataset.contextWidth + Math.floor((Math.abs(ROTATE_DEG) % 360) * dataset.contextWidth / 180)
+  SLIDE_THRESHOLD = dataset.slideThershold
+  cardsLength = dataset.cardsLength;
+  
+  var notFristCardClass = '.my_card_item_panel'+(cardIndex + 1 == cardsLength?0:cardIndex + 1)
+  ownerInstance.selectComponent(notFristCardClass)&&ownerInstance.selectComponent(notFristCardClass).setStyle({
+    "opacity": "1",
+  });
+}
+
+// 移动中
+function touchmove(e,ownerInstance){
+  if (!lock) return;
+  if (!instance || !startX || cardIndex !== cardListIndex) {
+    lock = false
+    return
+  }
+
+  var clientX = e.touches[0].clientX
+  moveX = clientX - startX;
+  instance.setStyle({
+    "transition": "unset",
+    "transform": "translate3d(" + moveX + "px, 0, " + 3 + "px)  rotate(" + ROTATE_DEG /CONTEXT_WIDTH * moveX + "deg)",
+  })
+ 
+}
+
+//移动结束
+function touchend(e,ownerInstance){
+  if (!lock) return;
+  if (!instance || !moveX ) {
+    lock = false
+    return
+  }
+
+  if(!(Math.abs(moveX) < SLIDE_THRESHOLD)) {
+    TRANSITION_STATUS = 1
+  }else{
+    lock = false
+    var notFristCardClass = '.my_card_item_panel'+(cardIndex + 1 == cardsLength?0:cardIndex + 1)
+    ownerInstance.selectComponent(notFristCardClass)&&ownerInstance.selectComponent(notFristCardClass).setStyle({
+      "opacity": Math.abs(moveX) < SLIDE_THRESHOLD?"0.6":"1",
+    });
+  };
+  instance.setStyle({
+    "transform": Math.abs(moveX) < SLIDE_THRESHOLD ?
+        // 如果小于滑出阈值，放弃setStyle，使用之前的transfrom
+        "translate3d()" :
+        "translate3d(" + (moveX > 0 ? 750 : -750) + "rpx, 0, " + 3 + "px) rotate(" + (moveX > 0 ? ROTATE_DEG : -ROTATE_DEG) + "deg)",
+        "transition": "all ease " + 0.2 + "s",
+  })
+}
+
+
+
+// 不通过touchmove事件切换卡片 每次transition都会触发
+function nextCarkStart(e,ownerInstance){
+  if(!TRANSITION_STATUS) return; //过滤掉不需要处理的 transition的触发
+
+  // 滑动切换卡片副作用————要触发切换卡片的回调函数
+  if(!OUT_NEXT_STATUS){
+    Math.abs(moveX) >= SLIDE_THRESHOLD && ownerInstance.callMethod('cardChange', {
+      direction: moveX > 0 ? 'right' : 'left',
+      index:cardIndex+1
+    })
+
+    var notFristCardClass = '.my_card_item_panel'+(cardIndex + 1 == cardsLength?0:cardIndex + 1)
+    ownerInstance.selectComponent(notFristCardClass)&&ownerInstance.selectComponent(notFristCardClass).setStyle({
+      "opacity": Math.abs(moveX) < SLIDE_THRESHOLD?"0.6":"1",
+    });
+    last_cardIndex = cardIndex
+    TRANSITION_STATUS = 0;
+    lock = false;
+    startX = 0
+    moveX = 0
+
+  }
+  return
+}
+
+module.exports = {
+  touchstart: touchstart,
+  touchmove: touchmove,
+  touchend: touchend,
+  isRender:isRender,
+  nextCarkStart:nextCarkStart,
+  cardStyleTop:cardStyleTop,
+  cardStyleTranslate:cardStyleTranslate,
+  cardStyleScale:cardStyleScale,
+  cardStyleOpacity:cardStyleOpacity
+}

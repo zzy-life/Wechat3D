@@ -1,0 +1,36 @@
+<view class="hear_card_panel">
+    <view class="card_image">
+        <image src="{{cardData.animalImage}}" />
+        <view class="icon_view">
+            <view class="{{getStart?'icon_  .my-icon':'icon_ '}} " bindtap="collectStart">
+                <van-icon name="{{getStart?'star':'star-o'}}" size="40rpx" color="{{getStart?'red':'#fff'}}" />
+            </view>
+            <view class="icon_" bindtap="gotoARURL" data-path="/package_3d_viewer/pages/camera/camera" data-modelsize="{{cardData.sysModel.modelSize}}" data-modelurl="{{cardData.sysModel.modelUrl}}" data-soundurl="{{cardData.sysModel.soundUrl}}">
+                <image src="../../staic/svg/hero_3_icon.svg"></image>
+            </view>
+        </view>
+    </view>
+    <view class="card_info">
+        <text class="card_info_title">{{cardData.animalName}}</text>
+        <text class="card_info_span"></text>
+        <rich-text class="card_info_text" nodes="<div style='display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 7;line-clamp: 7;overflow: hidden;height: 120rpx;'>{{cardData.animalIntroduction}}</div>"></rich-text>
+        <view class="check" style=" margin-top: 50px;" bindtap="gotoURL" data-path="/pages/animalDetails/animalDetails" data-modelData="{{cardData}}">
+            <view>更多有关"{{cardData.animalName}}"的信息</view>
+            <van-icon style="margin-left:2px" name="arrow" size="14px" />
+        </view>
+        <view class="ClrCnd" bindtap="gotoURL" data-path="/package_3d/pages/model/model" data-modelData="{{cardData}}">
+            <view class="xgeiGb">
+                <g-raised-button class="Q7ocWb Gfzyee">
+                    <view class="fSXkBc">
+                        <view class="rKFBIe">
+                            <view class="wPZGOb">
+                                <image style="" src="../../staic/svg/3d.svg"></image>
+                            </view>
+                            以 3D 模式查看
+                        </view>
+                    </view>
+                </g-raised-button>
+            </view>
+        </view>
+    </view>
+</view>

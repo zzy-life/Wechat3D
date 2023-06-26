@@ -1,0 +1,11 @@
+<view class="container">
+      <canvas id="canvas1" class="canvas1" type="webgl" disable-scroll="true" bindtap="handleMouseClick" bind:touchstart="bindtouchstart_callback" bind:touchmove="bindtouchmove_callback" bind:touchend="bindtouchEnd_callback">
+            <van-popup show="{{ infoflag }}" overlay="{{false}}" custom-class="ShowToast" overlay-style="background-color: transparent">
+                  <view class="modelview">
+                              <mp-html content="{{interactionW}}" />
+                            
+                        <button id="konwButton">接受任务</button>
+                  </view>
+            </van-popup>
+      </canvas>
+</view>

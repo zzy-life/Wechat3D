@@ -1,0 +1,18 @@
+<!-- index.wxml -->
+<view class="container">
+  <cardSwiper generic:cardItem="animalCrd" cardsData="{{cardList}}" nextPageData="{{nextPageData}}" isCycle="{{!!nextPageData.length}}" offsetY="{{-20}}" my_cards_panel="my_cardSwiper_panel" bind:cardChange="cardChange"></cardSwiper>
+  <van-overlay root-porta="{{true}}" show="{{ infoflag }}" bind:click="onClickHide" custom-class="ShowToast">
+    <view class="modelview">
+      <view class="text">
+        使用3D功能
+        <image style="    width: 20px;height: 20px;" src="../../staic/svg/3d.svg"></image>
+        和AR增强现实功能
+        <image style="    width: 20px;height: 20px;" src="../../staic/svg/hero_3_icon.svg"></image>
+        时
+        <view>建议提高音量</view>
+        <view>「本程序仅为3D和AR功能演示，后续功能待开发中」</view>
+      </view>
+      <van-button round bindtap="infoOK">好的</van-button>
+    </view>
+  </van-overlay>
+</view>

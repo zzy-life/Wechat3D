@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-html": "mp-html",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-rate": "@vant/weapp/rate/index",
+    "headerNavbar":"../../components/headerNavbar/headerNavbar"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black"
+}

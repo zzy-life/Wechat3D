@@ -1,0 +1,24 @@
+<wxs module="util" src="./index.wxs"></wxs>
+<view class="cardsPanel my_cards_panel">
+  <block wx:for="{{cardsData}}" wx:key="index">
+      <view
+      wx:if="{{item&&util.isRender(index,nowIndex,showNum,isCycle,cardsData.length)}}" wx:key="{{index}}"
+      class="{{offsetY>0?'card_item_panel':'card_item_panel transform_top_origin'}}  my_card_item_panel my_card_item_panel{{index}}" 
+      style="top:{{util.cardStyleTop(offsetY,index,nowIndex,showNum,isCycle,cardsData.length)}}rpx;transform: translate3d(0, 0, {{util.cardStyleTranslate(showNum,index,nowIndex,showNum,isCycle,cardsData.length)}}px) scale({{util.cardStyleScale(scale,index,nowIndex,showNum,isCycle,cardsData.length)}});opacity:{{util.cardStyleOpacity(index,nowIndex,showNum,isCycle,cardsData.length)}};"
+      data-card-index="{{nowIndex}}"
+      data-card-list-index="{{index}}"
+      data-card-zindex="{{showNum-index}}" 
+      data-slide-thershold="{{slideThershold}}" 
+      data-rotate-deg="{{rotateDeg}}"
+      data-context-width="{{showRangeW}}" 
+      data-slide-duration="{{slideDuration}}" 
+      data-cards-length = "{{cardsData.length}}"
+      mut-bind:touchstart="{{util.touchstart}}" 
+      mut-bind:touchmove="{{util.touchmove}}" 
+      mut-bind:touchend="{{util.touchend}}"
+      mut-bind:transitionend="{{util.nextCarkStart}}"
+      >
+        <cardItem class="my_card_item" cardData="{{item}}" nowIndex="{{nowIndex}}" cardIndex="{{index}}"></cardItem>
+      </view>
+  </block>
+</view>

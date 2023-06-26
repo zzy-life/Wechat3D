@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/card/card",
+    "pages/animalDetails/animalDetails"
+
+
+  ],
+  "subpackages": [
+    {
+      "root": "package_3d",
+      "pages": [
+        "pages/model/model"
+
+      ]
+    },
+    {
+      "root": "package_3d_viewer",
+      "pages": [
+        "pages/camera/camera"
+      ]
+    },
+    {
+      "root": "package_panorama",
+      "pages": [
+        "pages/photo/photo"
+      ]
+    }
+   
+  ],
+  
+  "preloadRule": {
+    "pages/card/card": {
+      "network": "all",
+      "packages": ["__APP__"]
+    }
+   
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Miniprogram 3D",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

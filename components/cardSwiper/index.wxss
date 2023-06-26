@@ -1,0 +1,29 @@
+.cardsPanel {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card_item_panel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    will-change: transform;
+    box-shadow: 0 2rpx 20rpx #999999;
+    transition: all ease 0.2s;
+    overflow: hidden;
+    transform-origin: 50% 100% 0;
+    border-radius: 20rpx;
+}
+
+.transform_top_origin {
+    transform-origin: 50% 0% 0;
+}
+
+@keyframes nextCard {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: yellow;
+    }
+}

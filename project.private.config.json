@@ -1,0 +1,35 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.25.3",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "卡片模型",
+          "pathName": "pages/card/card",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package_3d_viewer/pages/camera2/camera2",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "动物详情",
+          "pathName": "pages/animalDetails/animalDetails",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "setting": {
+    "urlCheck": true,
+    "compileHotReLoad": true
+  }
+}
