@@ -66,6 +66,12 @@ There is a WeChat MiniProgram adapted version of Three.js.
 
 
 
+## 付费提问
+
+可以在[Issues](https://github.com/zzy-life/Wechat3D/issues)区进行提问，也可以加入知识星球，两者相同，但会优先处理知识星球的提问
+
+![ZSXQ_20230626_213927402](image/ZSXQ_20230626_213927402.png)
+
 
 
 ## glb转gltf模型
