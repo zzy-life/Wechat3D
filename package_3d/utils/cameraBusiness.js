@@ -284,7 +284,15 @@ function loadModel(modelUrl) {
             let meshAnimation = gltf.animations[0];
             mixer = new THREE.AnimationMixer(gltf.scene);
             let animationClip = meshAnimation;
-            let clipAction = mixer.clipAction(animationClip).play();
+            if (animationClip == undefined) {
+                console.log('模型没有动画');
+            } else {
+                let clipAction = mixer.clipAction(animationClip).play();
+                //动画有多少秒
+                animationClip = clipAction.getClip();
+                console.log('动画时间', animationClip.duration);
+            }
+
             let paused = innerAudioContext.paused;
             //脑残腾讯，2.26.2版本之后，音频播放状态不准确，需要自己判断
             if (Utlis.compareVersion(wx.getSystemInfoSync().SDKVersion, '2.26.2') != 1) {
@@ -299,8 +307,7 @@ function loadModel(modelUrl) {
                     console.log(res.errCode)
                 })
             }
-            //动画有多少秒
-            animationClip = clipAction.getClip();
+
             //加入交互点
             if (interactablePoints.length) {
                 let point = Common.makeCycleLmageTextSprite(interactablePoints, THREE);
