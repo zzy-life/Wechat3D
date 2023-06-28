@@ -57,20 +57,23 @@ There is a WeChat MiniProgram adapted version of Three.js.
 
 
 
-## 赞助代码条款
+## 代码条款
 
-该软件包是基于[MIT 许可证](https://opensource.org/licenses/MIT)提供的，但请勿将其用于分发目的。您可以将代码部署到您的服务器或存储库。但是，您不得公开其他文件，例如源代码、示例、文档等，因为这会抵消赞助软件策略。
+开源内容遵循MIT许可证
 
-| 个人开发者 | ¥100 | 不包含解答 |
-| ---------- | ---- | ---------- |
+付费软件包是基于[MIT 许可证](https://opensource.org/licenses/MIT)提供的，但请勿将其用于分发目的。您可以将代码部署到您的服务器或存储库。但是，您不得公开其他文件，例如源代码、示例、文档等，因为这会抵消赞助软件策略。
+
+| 个人开发者 | ¥100 |
+| ---------- | ---- |
+
+如果您退出赞助商，您可以根据需要继续使用这些文件。
 
 
 
-## 付费提问
+## 感谢赞助
 
-可以在[Issues](https://github.com/zzy-life/Wechat3D/issues)区进行提问，也可以加入知识星球，两者相同，但会优先处理知识星球的提问
-
-![ZSXQ_20230626_213927402](image/ZSXQ_20230626_213927402.png)
+<p align="center"><a href="https://github.com"><img src="https://avatars.githubusercontent.com/u/30309276?s=96&v=4"
+width="50px" alt="w3cgirl" /></a>&nbsp;&nbsp;</p>
 
 
 
