@@ -35,6 +35,18 @@ There is a WeChat MiniProgram adapted version of Three.js.
 
 
 
+## 预览
+
+微信扫码：
+
+![gh_296d86229ea4_860](image/gh_296d86229ea4_860.jpg)
+
+
+
+
+
+
+
 ## 测试数据
 
 
@@ -207,14 +219,6 @@ There is a WeChat MiniProgram adapted version of Three.js.
 ### 示例模型
 
 链接: https://pan.baidu.com/s/1TqjHHweITVKBxhCi5geZVQ 提取码: 62kb 
-
-
-
-## 预览
-
-微信扫码：
-
-![gh_296d86229ea4_860](image/gh_296d86229ea4_860.jpg)
 
 
 
