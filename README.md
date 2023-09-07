@@ -12,7 +12,7 @@
 
 国内版ChatGPT
 
-https://chatweb.zhangzhiyu.live
+https://chataiweb.me
 
 
 
@@ -45,6 +45,53 @@ There is a WeChat MiniProgram adapted version of Three.js.
 
 
 
+
+
+
+
+
+
+
+
+## gltf模型展示能力
+
+![image-20230624161242835](image/image-20230624161242835.png)
+
+
+
+
+
+## 3DAR能力（未开源，需赞助）
+
+![1687594457916](image/1687594457916.jpg)
+
+
+
+![1687594457925](image/1687594457925.jpg)
+
+
+
+
+
+## 代码条款
+
+开源内容遵循MIT许可证
+
+付费软件包是基于[MIT 许可证](https://opensource.org/licenses/MIT)提供的，但请勿将其用于分发目的。您可以将代码部署到您的服务器或存储库。但是，您不得公开其他文件，例如源代码、示例、文档等，因为这会抵消赞助软件策略。
+
+| 项目 | 赞助金额 |
+| ------------ | ---- |
+| 技术支持     |  ¥100   |
+| AR及后台代码 |   ¥100   |
+
+
+
+
+
+## 感谢赞助
+
+<p align="center"><a href="https://github.com"><img src="https://avatars.githubusercontent.com/u/30309276?s=96&v=4"
+width="50px" alt="w3cgirl" /></a>&nbsp;&nbsp;</p>
 
 
 ## 测试数据
@@ -219,50 +266,6 @@ There is a WeChat MiniProgram adapted version of Three.js.
 ### 示例模型
 
 链接: https://pan.baidu.com/s/1TqjHHweITVKBxhCi5geZVQ 提取码: 62kb 
-
-
-
-
-
-## gltf模型展示能力
-
-![image-20230624161242835](image/image-20230624161242835.png)
-
-
-
-
-
-## 3DAR能力（未开源，需赞助）
-
-![1687594457916](image/1687594457916.jpg)
-
-
-
-![1687594457925](image/1687594457925.jpg)
-
-
-
-
-
-## 代码条款
-
-开源内容遵循MIT许可证
-
-付费软件包是基于[MIT 许可证](https://opensource.org/licenses/MIT)提供的，但请勿将其用于分发目的。您可以将代码部署到您的服务器或存储库。但是，您不得公开其他文件，例如源代码、示例、文档等，因为这会抵消赞助软件策略。
-
-| 项目 | 赞助金额 |
-| ------------ | ---- |
-| 技术支持     |  ¥100   |
-| AR及后台代码 |   ¥100   |
-
-如果您退出赞助商，您可以根据需要继续使用这些文件。
-
-
-
-## 感谢赞助
-
-<p align="center"><a href="https://github.com"><img src="https://avatars.githubusercontent.com/u/30309276?s=96&v=4"
-width="50px" alt="w3cgirl" /></a>&nbsp;&nbsp;</p>
 
 
 
