@@ -1,13 +1,17 @@
 {
-  "appid": "wx21312312",
+  "appid": "wx02e83fffc4533009",
   "projectname": "WeChat-3D",
   "compileType": "miniprogram",
   "srcMiniprogramRoot": "pages/",
   "packOptions": {
     "ignore": [
       {
-        "value": "screenshot",
+        "value": "image",
         "type": "folder"
+      },
+      {
+        "value": "README.md",
+        "type": "file"
       }
     ],
     "include": []
