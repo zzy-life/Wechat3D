@@ -61,7 +61,7 @@ function initThree(canvasId, modelUrl, modelmusic, size, position, interactions,
             //交互点组
             cityGroup = new THREE.Group();
             innerAudioContext = wx.createInnerAudioContext({
-                useWebAudioImplement: true // 是否使用 WebAudio 作为底层音频驱动，默认关闭。对于短音频、播放频繁的音频建议开启此选项，开启后将获得更优的性能表现。由于开启此选项后也会带来一定的内存增长，因此对于长音频建议关闭此选项
+                useWebAudioImplement: false// 是否使用 WebAudio 作为底层音频驱动，默认关闭。对于短音频、播放频繁的音频建议开启此选项，开启后将获得更优的性能表现。由于开启此选项后也会带来一定的内存增长，因此对于长音频建议关闭此选项
             })
             innerAudioContext.obeyMuteSwitch = false
             //模型声音

@@ -30,8 +30,9 @@ There is a WeChat MiniProgram adapted version of Three.js.
 
 -  VisionKit
 
+小程序也在基础库 2.20.0 版本开始提供了开发 AR 功能的能力。VisionKit 包含了 AR 在内的视觉算法，要想开发小程序的 AR 功能，我们需要先了解 VisionKit。
 
-小程序也在基础库 2.20.0 版本开始提供了开发 AR 功能的能力，即 VisionKit。VisionKit 包含了 AR 在内的视觉算法，要想开发小程序的 AR 功能，我们需要先了解 VisionKit。
+**本小程序修复了花屏问题**
 
 
 
