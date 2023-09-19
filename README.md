@@ -82,7 +82,7 @@ There is a WeChat MiniProgram adapted version of Three.js.
 | 项目 | 赞助金额 |
 | ------------ | ---- |
 | 技术支持     |  ¥100   |
-| AR及后台代码 |   ¥100   |
+| AR及后台代码（可直接运行） |   ¥100   |
 
 
 
@@ -91,6 +91,7 @@ There is a WeChat MiniProgram adapted version of Three.js.
 ## 感谢赞助
 
 <p align="center"><a href="https://github.com"><img src="https://avatars.githubusercontent.com/u/30309276?s=96&v=4"
+width="50px" alt="w3cgirl" /></a>&nbsp;&nbsp;<a href="https://github.com/unisdk"><img src="https://avatars.githubusercontent.com/u/132583216?v=4"
 width="50px" alt="w3cgirl" /></a>&nbsp;&nbsp;</p>
 
 
