@@ -12,7 +12,7 @@
 
 国内版ChatGPT
 
-https://chataiweb.me
+https://ai.webarcx.com
 
 
 
