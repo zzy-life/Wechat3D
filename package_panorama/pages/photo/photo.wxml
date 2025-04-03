@@ -1,0 +1,14 @@
+<view class="container">
+  <canvas
+          id="canvas1"
+          class="canvas1"
+          type="webgl"
+          disable-scroll = "true"
+          bindtouchstart="bindtouchstart_callback"
+          bindtouchmove="bindtouchmove_callback">
+      <cover-view class="cover-view">
+            <cover-view bindtap="toggleDeviceMotion">Start/Stop Device Motion</cover-view>  
+            <cover-view bindtap="scanQRCode" class="marginTop20">Scan QRCode</cover-view>  
+      </cover-view>
+  </canvas> 
+</view>
