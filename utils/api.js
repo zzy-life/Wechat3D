@@ -5,7 +5,7 @@
  * @LastEditTime: 2023-03-20 12:02:57
  */
 
-const API_BASE_URL = 'https://www.s.top';
+const API_BASE_URL = 'https://www.gqgood.top';
 const method = {
     GET: 'get',
     POST: 'post'

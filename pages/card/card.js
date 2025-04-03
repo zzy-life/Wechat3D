@@ -13,6 +13,9 @@ Page({
 
     infoflag: true,
   },
+  onShareAppMessage: function () {
+    // return custom share data when user share.
+  },
   cardChange(e) {
     const { direction, index } = e.detail;
     if (direction == 'left') {

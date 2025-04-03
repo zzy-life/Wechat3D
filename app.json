@@ -2,8 +2,6 @@
   "pages": [
     "pages/card/card",
     "pages/animalDetails/animalDetails"
-
-
   ],
   "subpackages": [
     {
